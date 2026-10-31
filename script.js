@@ -14,22 +14,38 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const form = document.getElementById("sellerForm");
 const feedback = document.getElementById("formFeedback");
-form?.addEventListener("submit", event => {
+form?.addEventListener("submit", async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
+  const config = window.BLACKSTORE_SUPABASE || {};
+  if (!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(config.url || "") || !config.anonKey || config.anonKey.includes("PON_AQUI")) {
+    feedback.textContent = "El registro todavía no está habilitado. Contacta a Blackstore para solicitar información.";
+    return;
+  }
   const data = new FormData(form);
-  const fields = [
-    "Hola Blackstore. Quiero solicitar información para vender en el marketplace.",
-    `Negocio: ${data.get("business")}`,
-    `Contacto: ${data.get("contact")}`,
-    `Ciudad: ${data.get("city")}`,
-    `WhatsApp: ${data.get("phone")}`,
-    `Categoría: ${data.get("category")}`,
-    `Descripción: ${data.get("details") || "No especificada"}`,
-    "",
-    "Entiendo que esta es una solicitud inicial y que mi tienda no se crea automáticamente."
-  ];
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fields.join("\n"))}`;
-  feedback.textContent = "Se abrirá WhatsApp con tu solicitud lista para enviar. Revisa el mensaje antes de enviarlo.";
-  window.open(url, "_blank", "noopener,noreferrer");
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  feedback.textContent = "Enviando solicitud...";
+  try {
+    const response = await fetch(`${config.url}/rest/v1/rpc/submit_vendor_application`, {
+      method: "POST",
+      headers: { "apikey": config.anonKey, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        p_business_name: String(data.get("business") || "").trim(),
+        p_contact_name: String(data.get("contact") || "").trim(),
+        p_city: String(data.get("city") || "").trim(),
+        p_phone: String(data.get("phone") || "").trim(),
+        p_category: String(data.get("category") || "").trim(),
+        p_description: String(data.get("details") || "").trim()
+      })
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    feedback.textContent = "¡Solicitud recibida! Blackstore revisará tus datos y te contactará. Esto todavía no crea una tienda ni una cuenta.";
+    form.reset();
+  } catch (error) {
+    console.error("Error al enviar solicitud", error);
+    feedback.textContent = "No se pudo guardar la solicitud. Intenta de nuevo más tarde.";
+  } finally {
+    button.disabled = false;
+  }
 });

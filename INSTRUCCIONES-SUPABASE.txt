@@ -1,0 +1,8 @@
+BLACKSTORE V5 CONECTADO
+
+1. En Supabase > SQL Editor, abre una consulta nueva y ejecuta el archivo supabase-setup.sql.
+2. Si aparece Success, publica los archivos contenidos en esta carpeta en la raiz de tu repositorio GitHub Pages (no la carpeta contenedora).
+3. Comprueba en el sitio que una solicitud de prueba aparece en Table Editor > vendor_applications como pending.
+4. Esta version recibe solicitudes; aun no crea cuentas de vendedor, tiendas ni un panel de aprobacion.
+5. La clave incluida es PUBLICA. Nunca subas claves secretas al repositorio.
+6. Antes de abrir el formulario a gran escala, agrega proteccion antispam.

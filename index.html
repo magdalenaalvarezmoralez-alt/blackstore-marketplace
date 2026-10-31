@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="supabase-config.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -103,7 +104,7 @@
         <label>WhatsApp de contacto<input name="phone" required inputmode="tel" maxlength="25" placeholder="Ej. 300 123 4567"></label>
         <label>¿Qué categoría describes mejor?<select name="category" required><option value="">Selecciona una categoría</option><option>Cabello y belleza</option><option>Moda y ropa</option><option>Accesorios y joyería</option><option>Arte y artesanías</option><option>Alimentos y productos tradicionales</option><option>Otra</option></select></label>
         <label>Cuéntanos brevemente qué vendes<textarea name="details" rows="3" maxlength="500" placeholder="Describe tus productos, marca o emprendimiento..."></textarea></label>
-        <button class="btn btn-gold submit-btn" type="submit">Enviar solicitud por WhatsApp <b>↗</b></button>
+        <button class="btn btn-gold submit-btn" type="submit">Enviar solicitud a Blackstore <b>↗</b></button>
         <p class="form-legal">Al enviar, autorizas que Blackstore te contacte sobre esta solicitud. No se crea automáticamente una cuenta ni una tienda.</p>
         <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
       </form>
