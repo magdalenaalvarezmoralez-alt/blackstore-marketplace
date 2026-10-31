@@ -129,12 +129,18 @@
       <h2>El talento tiene un lugar.<br><em>Construyámoslo juntos.</em></h2>
       <a class="btn btn-gold" href="#vendedores">Registrar mi emprendimiento <b>→</b></a>
     </section>
-  </main>
+  <section id="administracion" class="admin-area" aria-label="Administración Blackstore">
+<h2>Administración Blackstore</h2><p>Acceso exclusivo del equipo autorizado.</p>
+<div id="adminLogin"><form id="adminLoginForm"><label>Correo electrónico<input type="email" id="adminEmail" required autocomplete="username"></label><label>Contraseña<input type="password" id="adminPassword" required autocomplete="current-password"></label><button class="btn btn-gold" type="submit">Iniciar sesión</button></form></div>
+<div id="adminPanel" hidden><p id="adminIdentity"></p><button id="adminLogout" type="button">Cerrar sesión</button><button id="adminRefresh" type="button">Actualizar solicitudes</button><div id="adminApplications"></div></div>
+<p id="adminMessage" role="status" aria-live="polite"></p>
+</section></main>
 
   <footer>
     <a class="brand footer-brand" href="#inicio"><span>BLACKSTORE<small>MARKETPLACE</small></span></a>
     <p>Un espacio digital para el emprendimiento, la cultura y la identidad afro.</p>
     <small>© <span id="year"></span> Blackstore. Proyecto en etapa de convocatoria.</small>
   </footer>
+<script src="admin.js" defer></script>
 </body>
 </html>

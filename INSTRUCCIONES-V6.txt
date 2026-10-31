@@ -1,0 +1,11 @@
+BLACKSTORE V6 - PANEL ADMINISTRADOR
+
+1. En Supabase SQL Editor ejecuta TODO el contenido de admin-setup.sql.
+2. Sube los archivos de esta carpeta a la RAIZ del repositorio GitHub (incluye admin.js y carpeta images).
+3. Abre la web y busca la sección Administración Blackstore.
+4. Inicia sesión con el correo y CONTRASEÑA de tu usuario creado en Supabase Authentication > Users (no es necesariamente la contraseña de GitHub).
+5. Prueba aprobar/rechazar una solicitud de prueba.
+
+IMPORTANTE: Aprobar una solicitud cambia su estado, NO crea una cuenta de vendedor ni habilita tienda o catálogo. El acceso se verifica en el servidor mediante JWT y rol admin; no publiques claves secretas.
+
+Si tu usuario fue creado sin contraseña, configura una contraseña mediante un flujo seguro de recuperación/invitación de Supabase antes de intentar iniciar sesión.
