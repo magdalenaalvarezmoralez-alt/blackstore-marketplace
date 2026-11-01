@@ -37,3 +37,13 @@ footer{border-top:1px solid #222;padding:35px 5%;display:flex;align-items:center
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
 .admin-area{max-width:1050px;margin:50px auto;padding:26px;border:1px solid #a88740;border-radius:20px;background:#151515;color:#eee}.admin-area h2{color:#e8c76e}.admin-area form{display:grid;gap:15px;max-width:460px}.admin-area label{display:grid;gap:6px}.admin-area input{padding:14px;border-radius:9px;background:#090909;border:1px solid #555;color:white}.admin-area button{cursor:pointer;padding:12px 18px;margin:6px;border-radius:10px}.admin-application{border:1px solid #555;border-radius:12px;padding:15px;margin:12px 0;overflow-wrap:anywhere}.admin-application p{margin:6px 0}.admin-application button{background:#d9b857;color:#161616;border:0}.admin-application button.reject{background:#9c4444;color:white}
+
+/* Blackstore V7 */
+.v7-section{padding-top:55px;padding-bottom:55px}.v7-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:24px}.v7-card{background:#171717;border:1px solid #6c562a;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}.v7-card img{width:100%;height:200px;object-fit:cover;border-radius:12px}.v7-card input,.v7-card textarea,.admin-application input{width:100%;padding:13px;background:#090909;color:#fff;border:1px solid #555;border-radius:9px}.v7-card label{display:block}.v7-item{display:flex;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:1px solid #555;padding:12px 0}.v7-item button,.admin-application button{padding:10px;border-radius:10px;cursor:pointer}#vendorMessage{color:#dfb95c;margin-top:15px}#vendorSigned button{margin:6px}
+
+/* V8: accesos visibles y respeto de los paneles ocultos */
+[hidden]{display:none!important}
+#panel-vendedor,#administracion{scroll-margin-top:95px}
+.v8-note{font-size:.95rem;color:#d7c59b;line-height:1.6;margin-top:18px}
+#panel-vendedor a{color:#e0bc5d;text-decoration:underline}
+#nav a:focus-visible,.header-cta:focus-visible{outline:2px solid #e0bc5d;outline-offset:4px}

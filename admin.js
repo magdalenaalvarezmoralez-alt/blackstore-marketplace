@@ -18,6 +18,10 @@
   for(const a of data){
    const card=node('article');card.className='admin-application';
    for(const [label,key] of [['Negocio','business_name'],['Contacto','contact_name'],['Ciudad','city'],['WhatsApp','whatsapp'],['Categoría','category'],['Descripción','description'],['Estado','status']])card.append(node('p',`${label}: ${a[key]??''}`));
+   if(a.status==='approved'){
+    const input=node('input');input.type='email';input.placeholder='Correo registrado del vendedor';input.setAttribute('aria-label','Correo del vendedor');
+    const activate=node('button','Activar tienda');activate.type='button';activate.onclick=async()=>{if(!input.value.trim())return msg('Escribe el correo del vendedor.');activate.disabled=true;try{await api('/rest/v1/rpc/admin_activate_store',{method:'POST',body:JSON.stringify({p_application_id:a.id,p_vendor_email:input.value.trim()})});msg('Tienda activada. El vendedor ya puede entrar.')}catch(e){msg('No se pudo activar: '+e.message)}finally{activate.disabled=false}};card.append(input,activate);
+   }
    if(a.status==='pending')for(const [label,status] of [['Aprobar','approved'],['Rechazar','rejected']]){
     const b=node('button',label);b.type='button';if(status==='rejected')b.className='reject';
     b.onclick=async()=>{if(!confirm(`${label} la solicitud de ${a.business_name}?`))return;b.disabled=true;try{await api('/rest/v1/rpc/admin_review_vendor_application',{method:'POST',body:JSON.stringify({p_application_id:a.id,p_new_status:status})});msg('Solicitud actualizada.');await load()}catch(e){msg('Error: '+e.message);b.disabled=false}};card.append(b)

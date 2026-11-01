@@ -1,0 +1,11 @@
+BLACKSTORE V7 - INSTALACIÓN
+1. En Supabase > SQL Editor, ejecuta v7-setup.sql UNA SOLA VEZ. Mantén las tablas y funciones V6 existentes.
+2. En Supabase > Authentication > Providers > Email, habilita registro por email y revisa la confirmación de correo.
+3. En GitHub, sube los archivos nuevos y actualizados a la raíz del mismo repositorio. Conserva images/.
+4. Comprueba que GitHub Pages despliegue el último commit.
+5. El vendedor primero envía la solicitud de negocio y crea una cuenta con su propio correo.
+6. El administrador aprueba la solicitud, y luego escribe el correo registrado del vendedor y pulsa Activar tienda.
+7. El vendedor inicia sesión en Mi tienda Blackstore y publica productos.
+8. Antes de producción: configurar CAPTCHA/rate limits, políticas de moderación, revisión de imágenes y pruebas de seguridad.
+NOTA: No incluyas jamás la clave service_role en archivos públicos de GitHub. La clave publishable sí es pública.
+La V7 no incluye pagos, carrito, envíos ni recuperación de contraseña personalizada.

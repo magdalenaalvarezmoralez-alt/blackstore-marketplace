@@ -25,10 +25,12 @@
     <nav class="nav" id="nav">
       <a href="#categorias">Categorías</a>
       <a href="#comprar">Quiero comprar</a>
-      <a href="#vendedores">Quiero vender</a>
+      <a href="#vendedores">Solicitar tienda</a>
+      <a href="#panel-vendedor">Crear cuenta / Iniciar sesión</a>
+      <a href="#administracion">Administración</a>
       <a href="#nosotros">Nuestra visión</a>
     </nav>
-    <a class="header-cta" href="#vendedores">Publica tu negocio <span>↗</span></a>
+    <a class="header-cta" href="#panel-vendedor">Mi tienda <span>↗</span></a>
   </header>
 
   <main>
@@ -81,7 +83,8 @@
       </div>
     </section>
 
-    <section class="section seller-section" id="vendedores">
+    <section class="section v7-section" id="catalogo-real"><h2>Productos de nuestras tiendas</h2><p>Solo publicaciones reales de vendedores autorizados.</p><div id="publicCatalog" class="v7-grid"></div></section>
+<section class="section seller-section" id="vendedores">
       <div class="seller-copy">
         <p class="eyebrow">CRECE CON BLACKSTORE</p>
         <h2>Tu negocio merece<br><em>llegar más lejos.</em></h2>
@@ -110,7 +113,11 @@
       </form>
     </section>
 
-    <section class="how-section" id="nosotros">
+    <section class="section v7-section" id="panel-vendedor"><p class="eyebrow">ACCESO DE VENDEDORES</p><h2>Crear cuenta e iniciar sesión</h2><p>Primero crea tu cuenta con tu correo y contraseña. Después <a href="#vendedores">envía tu solicitud de tienda</a> si aún no la has enviado. Blackstore revisará tu solicitud y el administrador vinculará tu cuenta con tu tienda aprobada.</p>
+<div id="vendorAuth" class="v7-grid"><form id="vendorSignup" class="v7-card"><h3>Crear cuenta de vendedor</h3><label>Correo<input name="email" type="email" required autocomplete="email"></label><label>Contraseña (mínimo 8 caracteres)<input name="password" type="password" minlength="8" required autocomplete="new-password"></label><button class="btn btn-gold">Crear cuenta</button></form>
+<form id="vendorLogin" class="v7-card"><h3>Entrar a mi tienda</h3><label>Correo<input name="email" type="email" required autocomplete="username"></label><label>Contraseña<input name="password" type="password" required autocomplete="current-password"></label><button class="btn btn-gold">Iniciar sesión</button></form></div>
+<div id="vendorSigned" hidden><p id="vendorEmail"></p><button type="button" id="vendorLogout">Cerrar sesión</button><button type="button" id="vendorRefresh">Actualizar panel</button><p id="vendorAwaiting">Tu cuenta existe, pero tu tienda aún no ha sido activada por Blackstore.</p><div id="vendorDashboard" hidden><h3 id="vendorStoreName"></h3><form id="productForm" class="v7-card"><h3>Publicar producto</h3><label>Nombre<input name="name" maxlength="100" minlength="2" required></label><label>Descripción<textarea name="description" maxlength="1000"></textarea></label><label>Precio en pesos colombianos<input name="price" type="number" min="1" step="1" required></label><label>Fotografía JPG, PNG o WebP (máximo 5 MB)<input id="productImage" type="file" accept="image/jpeg,image/png,image/webp"></label><button class="btn btn-gold">Publicar producto</button></form><h3>Mis productos</h3><div id="vendorProducts"></div></div></div><p id="vendorMessage" role="status" aria-live="polite"></p><p class="v8-note">¿Ya enviaste una solicitud por WhatsApp o en Blackstore? No necesitas repetirla. Registra tu correo y comunícaselo al administrador para vincular tu tienda.</p></section>
+<section class="how-section" id="nosotros">
       <div class="section-head centered">
         <p class="eyebrow">UN PROYECTO QUE SE CONSTRUYE CONTIGO</p>
         <h2>De emprendimientos locales<br><em>a una comunidad conectada.</em></h2>
@@ -142,5 +149,6 @@
     <small>© <span id="year"></span> Blackstore. Proyecto en etapa de convocatoria.</small>
   </footer>
 <script src="admin.js" defer></script>
+<script src="vendor.js" defer></script>
 </body>
 </html>

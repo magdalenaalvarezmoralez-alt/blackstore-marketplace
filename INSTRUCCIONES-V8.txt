@@ -1,0 +1,14 @@
+BLACKSTORE MARKETPLACE V8 — PUBLICACIÓN Y PRUEBA
+
+1. Esta entrega conserva V7 y agrega enlaces visibles en el menú a registro, sesión y administración.
+2. No borres tablas, usuarios, solicitudes ni registros de Supabase.
+3. Si ya ejecutaste v7-setup.sql correctamente, NO necesitas volver a ejecutarlo para esta actualización visual.
+4. En Supabase > Authentication > Providers > Email, habilita registro por email y configura confirmación según tu necesidad. En Authentication > URL Configuration, establece Site URL en la dirección publicada de Blackstore y añade la URL de GitHub Pages en Redirect URLs.
+5. En GitHub, abre tu repositorio blackstore-marketplace, sube TODOS los archivos y carpeta images de este ZIP a la RAÍZ del repositorio y confirma los cambios. No subas el ZIP sin descomprimir.
+6. Espera el despliegue de GitHub Pages; actualiza la página o usa una pestaña privada. Verifica menú > Crear cuenta / Iniciar sesión.
+7. El vendedor crea su cuenta con su propio correo y confirma el correo si se le solicita. Luego envía la solicitud de negocio, si aún no la envió.
+8. El administrador entra en Administración con su cuenta de administrador, aprueba la solicitud y usa Activar tienda con el correo CONFIRMADO del vendedor. El correo debe corresponder a la persona solicitante; verificarlo fuera del sistema porque la solicitud antigua no almacena user_id.
+9. El vendedor inicia sesión en Mi tienda, publica un producto de prueba y comprueba que se vea en el catálogo.
+10. Antes de abrir al público: revisar RLS, control de abuso, recuperación de contraseñas, moderación y pruebas con cuentas separadas. No pongas service_role en GitHub.
+
+IMPORTANTE: V8 no automatiza la vinculación solicitud-cuenta; el administrador debe comprobar la identidad y activar la tienda. No incluye pagos, envíos ni carrito.
